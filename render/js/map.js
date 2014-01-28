@@ -26,11 +26,22 @@ Map = function(camera, controls) {
         }
     };
 
-    this.zoomTo = function(name, completed) {
+    this.getCoordinatesForStreet = function(name) {
         var lines = this.streets[name];
-        var firstLine = lines[0];
-        var vertice   = firstLine.geometry.vertices[0];
-        console.log(vertice);
+        if (lines) {
+            var firstLine = lines[0];
+            var vertice   = firstLine.geometry.vertices[0];
+            if (vertice) {
+                console.log(vertice);
+                return vertice;            
+            }
+        } 
+        console.log("Don't now street "+name);
+        return new THREE.Vector3();
+    };
+
+    this.zoomTo = function(name, completed) {
+        var vertice = this.getCoordinatesForStreet(name);
 
         var from = {
             x: this.camera.position.x,

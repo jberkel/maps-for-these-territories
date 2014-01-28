@@ -22,14 +22,15 @@ function init() {
         }
     }
 
-    var soundModule = new SoundModule();
+    soundModule = new SoundModule(map);
 
     function animate() {
         requestAnimationFrame(animate);
         TWEEN.update();
 //        controls.update();
         render();
-
+        //console.log(camera.position);
+        soundModule.updateSpat(camera.position)
     }
 
     function render() {

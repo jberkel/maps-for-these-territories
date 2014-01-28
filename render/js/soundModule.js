@@ -1,30 +1,13 @@
-SoundModule = function(){
+SoundModule = function(map) {
+	var cameraPosition = new THREE.Vector2(0, 0, 0);
+	var timestamps=[];	
+	var feature;
 
-	var cameraPosition = new THREE.Vector3(0, 0, 0);
-	var oscillator = new Oscillator();
-	var timestamps=[];
-	var coords =[];
-
-	for (var name in streets) {
-    	var garbage = streets[name];
-    	//console.log(name);
-       	for (var i=0; i<garbage.features.length; i++){
-			var feature = garbage.features[i];
-			if (feature.properties.name == "Friedrichstraße"){
-				timestamps.push(feature.properties.timestamp);
-				coords.push(feature.geometry.coordinates);
-			}
-		}
-	}
-
-	var oscillator = new Oscillator(timestamps, coords);
-	console.log(timestamps);
+	oscillator = new Oscillator(timestamps, map.getCoordinatesForStreet("Friedrichstraße"));
 
 
-	this.updateSpat = function(point3){
-		cameraPosX = point3[0];
-		cameraPosY = point3[1];
-		cameraPosZ = point3[3];
+	this.updateSpat = function(vector3) {
+		oscillator.updateSpat(vector3);
 	}
 
 	this.play = function(){

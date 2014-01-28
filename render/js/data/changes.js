@@ -1,4 +1,764 @@
 var changes = {
+    "Alexandrinenstraße": [
+        {
+            "from": 1650,
+            "to": 1750,
+            "oldName": "Die Demmerung"
+        },
+        {
+            "from": 1750,
+            "to": 1847,
+            "oldName": "Feldstraße"
+        }
+    ],
+    "Alte Jakobstraße": [
+        {
+            "from": 1680,
+            "to": 1778,
+            "oldName": "Cöpnicksche Vorstraße"
+        },
+        {
+            "from": 1699,
+            "to": 1723,
+            "oldName": "Am Kirchhofe"
+        },
+        {
+            "from": 1699,
+            "to": 1723,
+            "oldName": "Gegen der Kirche"
+        },
+        {
+            "from": 1716,
+            "to": 1778,
+            "oldName": "Jacobs Straße"
+        }
+    ],
+    "Bergfriedstraße": [
+        {
+            "from": 1861,
+            "to": 1949,
+            "oldName": "Fürstenstraße"
+        }
+    ],
+    "Bergmannstraße": [
+        {
+            "from": 1837,
+            "to": 1837,
+            "oldName": "Weinbergsweg"
+        }
+    ],
+    "Bethaniendamm": [
+        {
+            "from": 1849,
+            "to": 1937,
+            "oldName": "Bethanienufer"
+        },
+        {
+            "from": 1849,
+            "to": 1937,
+            "oldName": "Mariannenufer"
+        },
+        {
+            "from": 1937,
+            "to": 1947,
+            "oldName": "Felsendamm"
+        }
+    ],
+    "Blücherplatz": [
+        {
+            "from": 1837,
+            "to": 1884,
+            "oldName": "Platz am Halleschen Tor"
+        }
+    ],
+    "Blücherstraße": [
+        {
+            "from": 1813,
+            "to": 1836,
+            "oldName": "Pionierweg"
+        },
+        {
+            "from": 1836,
+            "to": 1864,
+            "oldName": "Pionierstraße"
+        }
+    ],
+    "Budapester Straße": [
+        {
+            "from": 1690,
+            "to": 1863,
+            "oldName": "Mühlenstraße"
+        }
+    ],
+    "Kurfürstenstraße": [
+        {
+            "from": 1690,
+            "to": 1863,
+            "oldName": "Mühlenstraße"
+        }
+    ],
+    "Obentrautstraße": [
+        {
+            "from": 1690,
+            "to": 1863,
+            "oldName": "Mühlenstraße"
+        },
+        {
+            "from": 1862,
+            "to": 1936,
+            "oldName": "Teltower Straße"
+        }
+    ],
+    "Columbiadamm": [
+        {
+            "from": 1901,
+            "to": 1919,
+            "oldName": "Kirchhofstraße"
+        },
+        {
+            "from": 1919,
+            "to": 1929,
+            "oldName": "Friedhofstraße"
+        },
+        {
+            "from": 1919,
+            "to": 1929,
+            "oldName": "Friedhofstraße"
+        },
+        {
+            "from": 1929,
+            "to": 1950,
+            "oldName": "Columbiastraße"
+        }
+    ],
+    "Dieffenbachstraße": [
+        {
+            "from": 1866,
+            "to": 1972,
+            "oldName": "Am Urban"
+        }
+    ],
+    "Fontanepromenade": [
+        {
+            "from": 1866,
+            "to": 1972,
+            "oldName": "Am Urban"
+        }
+    ],
+    "Dresdener Straße": [
+        {
+            "from": 1550,
+            "to": 1874,
+            "oldName": "Rixdorfer Damm"
+        }
+    ],
+    "Kottbusser Damm": [
+        {
+            "from": 1550,
+            "to": 1874,
+            "oldName": "Rixdorfer Damm"
+        }
+    ],
+    "Kottbusser Straße": [
+        {
+            "from": 1550,
+            "to": 1874,
+            "oldName": "Rixdorfer Damm"
+        }
+    ],
+    "Dudenstraße": [
+        {
+            "from": 1901,
+            "to": 1936,
+            "oldName": "Dreibundstraße"
+        },
+        {
+            "from": 1936,
+            "to": 1949,
+            "oldName": "Immelmannstraße"
+        }
+    ],
+    "Eisenbahnstraße": [
+        {
+            "from": 1849,
+            "to": 1852,
+            "oldName": "Lübbener Straße"
+        }
+    ],
+    "Erkelenzdamm": [
+        {
+            "from": 1849,
+            "to": 1937,
+            "oldName": "Elisabethufer"
+        }
+    ],
+    "Feilnerstraße": [
+        {
+            "from": 1650,
+            "to": 1848,
+            "oldName": "Hasenhegerstraße"
+        }
+    ],
+    "Flottwellstraße": [
+        {
+            "from": 1863,
+            "to": 1869,
+            "oldName": "Wörlitzer Straße"
+        }
+    ],
+    "Fraenkelufer": [
+        {
+            "from": 1849,
+            "to": 1896,
+            "oldName": "Kohlenufer"
+        },
+        {
+            "from": 1937,
+            "to": 1947,
+            "oldName": "Thielschufer"
+        }
+    ],
+    "Gitschiner Straße": [
+        {
+            "from": 1845,
+            "to": 1852,
+            "oldName": "Hallische Kommunikation"
+        },
+        {
+            "from": 1852,
+            "to": 1868,
+            "oldName": "Hellweg"
+        }
+    ],
+    "Großbeerenstraße": [
+        {
+            "from": 1864,
+            "to": 1864,
+            "oldName": "Monumentenstraße"
+        }
+    ],
+    "Hedemannstraße": [
+        {
+            "from": 1927,
+            "to": 1927,
+            "oldName": "Verlängerte Hedemannstraße"
+        }
+    ],
+    "Heinrich-Heine-Straße": [
+        {
+            "from": 1843,
+            "to": 1960,
+            "oldName": "Neanderstraße"
+        },
+        {
+            "from": 1849,
+            "to": 1960,
+            "oldName": "Prinzenstraße"
+        }
+    ],
+    "Hermannplatz": [
+        {
+            "from": 1750,
+            "to": 1885,
+            "oldName": "Rollkrug"
+        }
+    ],
+    "Hollmannstraße": [
+        {
+            "from": 1789,
+            "to": 1857,
+            "oldName": "Husarenstraße"
+        }
+    ],
+    "Kochstraße": [
+        {
+            "from": 1700,
+            "to": 1734,
+            "oldName": "Kirchstraße"
+        }
+    ],
+    "Kohlfurter Straße": [
+        {
+            "from": 1862,
+            "to": 1949,
+            "oldName": "Britzer Straße"
+        }
+    ],
+    "Kommandantenstraße": [
+        {
+            "from": 1678,
+            "to": 1700,
+            "oldName": "Scheunengasse"
+        },
+        {
+            "from": 1700,
+            "to": 1763,
+            "oldName": "Jouanengasse"
+        },
+        {
+            "from": 1763,
+            "to": 1846,
+            "oldName": "Neue Kommandantenstraße"
+        }
+    ],
+    "Köpenicker Straße": [
+        {
+            "from": 1589,
+            "to": 1589,
+            "oldName": "Der lange Damm"
+        },
+        {
+            "from": 1589,
+            "to": 1589,
+            "oldName": "Der neue Damm"
+        },
+        {
+            "from": 1589,
+            "to": 1589,
+            "oldName": "Die neue Trift"
+        },
+        {
+            "from": 1589,
+            "to": 1589,
+            "oldName": "Weidendamm"
+        }
+    ],
+    "Körtestraße": [
+        {
+            "from": 1893,
+            "to": 1933,
+            "oldName": "Camphausenstraße"
+        }
+    ],
+    "Kreuzbergstraße": [
+        {
+            "from": 1550,
+            "to": 1862,
+            "oldName": "Weinmeisterweg"
+        }
+    ],
+    "Legiendamm": [
+        {
+            "from": 1937,
+            "to": 1947,
+            "oldName": "Kösterdamm"
+        },
+        {
+            "from": 1849,
+            "to": 1937,
+            "oldName": "Luisenufer"
+        }
+    ],
+    "Segitzdamm": [
+        {
+            "from": 1849,
+            "to": 1937,
+            "oldName": "Luisenufer"
+        }
+    ],
+    "Oranienplatz": [
+        {
+            "from": 1849,
+            "to": 1937,
+            "oldName": "Luisenufer"
+        }
+    ],
+    "Leuschnerdamm": [
+        {
+            "from": 1937,
+            "to": 1947,
+            "oldName": "Schröderdamm"
+        },
+        {
+            "from": 1849,
+            "to": 1937,
+            "oldName": "Elisabethufer"
+        }
+    ],
+    "Lilienthalstraße": [
+        {
+            "from": 1897,
+            "to": 1929,
+            "oldName": "Lehniner Straße"
+        },
+        {
+            "from": 1897,
+            "to": 1929,
+            "oldName": "Siboldstraße"
+        }
+    ],
+    "Lindenstraße": [
+        {
+            "from": 1640,
+            "to": 1700,
+            "oldName": "Weg nach Tempelhof"
+        }
+    ],
+    "Axel-Springer-Straße": [
+        {
+            "from": 1640,
+            "to": 1700,
+            "oldName": "Weg nach Tempelhof"
+        }
+    ],
+    "Lobeckstraße": [
+        {
+            "from": 1849,
+            "to": 1962,
+            "oldName": "Brandenburgstraße"
+        }
+    ],
+    "Manteuffelstraße": [
+        {
+            "from": 1849,
+            "to": 1852,
+            "oldName": "Eisenbahnstraße"
+        }
+    ],
+    "Mehringdamm": [
+        {
+            "from": 1837,
+            "to": 1864,
+            "oldName": "Tempelhofer Straße"
+        },
+        {
+            "from": 1864,
+            "to": 1946,
+            "oldName": "Belle-Alliance-Straße"
+        },
+        {
+            "from": 1946,
+            "to": 1947,
+            "oldName": "Franz-Mehring-Straße"
+        }
+    ],
+    "Mehringplatz": [
+        {
+            "from": 1734,
+            "to": 1815,
+            "oldName": "Rondell"
+        },
+        {
+            "from": 1815,
+            "to": 1946,
+            "oldName": "Belle-Alliance-Platz"
+        },
+        {
+            "from": 1946,
+            "to": 1947,
+            "oldName": "Franz-Mehring-Platz"
+        }
+    ],
+    "Methfesselstraße": [
+        {
+            "from": 1876,
+            "to": 1935,
+            "oldName": "Lichterfelder Straße"
+        }
+    ],
+    "Möckernstraße": [
+        {
+            "from": 1850,
+            "to": 1864,
+            "oldName": "Militärstraße"
+        }
+    ],
+    "Naunynstraße": [
+        {
+            "from": 1862,
+            "to": 1864,
+            "oldName": "Dennewitzstraße"
+        }
+    ],
+    "Niederkirchnerstraße": [
+        {
+            "from": 1891,
+            "to": 1951,
+            "oldName": "Prinz-Albrecht-Straße"
+        }
+    ],
+    "Ohlauer Straße": [
+        {
+            "from": 1880,
+            "to": 1949,
+            "oldName": "Grünauer Straße"
+        }
+    ],
+    "Oranienstraße": [
+        {
+            "from": 1740,
+            "to": 1849,
+            "oldName": "Orangenstraße"
+        },
+        {
+            "from": 1843,
+            "to": 1849,
+            "oldName": "Neue Orangenstraße"
+        }
+    ],
+    "Paul-Lincke-Ufer": [
+        {
+            "from": 1849,
+            "to": 1956,
+            "oldName": "Kottbusser Ufer"
+        },
+        {
+            "from": 1956,
+            "to": 1966,
+            "oldName": "Lincke-Ufer"
+        }
+    ],
+    "Puschkinallee": [
+        {
+            "from": 1750,
+            "to": null,
+            "oldName": "Vor dem Schlesischen Tor"
+        }
+    ],
+    "Reichpietschufer": [
+        {
+            "from": 1831,
+            "to": 1867,
+            "oldName": "Grabenstraße"
+        },
+        {
+            "from": 1867,
+            "to": 1933,
+            "oldName": "Königin-Augusta-Straße"
+        },
+        {
+            "from": 1933,
+            "to": 1947,
+            "oldName": "Tirpitzufer"
+        }
+    ],
+    "Riemannstraße": [
+        {
+            "from": 1874,
+            "to": 1936,
+            "oldName": "Mariendorfer Straße"
+        }
+    ],
+    "Ritterstraße": [
+        {
+            "from": 1843,
+            "to": 1845,
+            "oldName": "Neue Junkerstraße"
+        }
+    ],
+    "Ruhlsdorfer Straße": [
+        {
+            "from": 1864,
+            "to": 1949,
+            "oldName": "Lankwitzstraße"
+        }
+    ],
+    "Schöneberger Ufer": [
+        {
+            "from": 1935,
+            "to": 1947,
+            "oldName": "Großadmiral-von-Koester-Ufer"
+        }
+    ],
+    "Sebastianstraße": [
+        {
+            "from": 1699,
+            "to": 1723,
+            "oldName": "Kirchgasse"
+        },
+        {
+            "from": 1723,
+            "to": 1750,
+            "oldName": "Kirchstraße"
+        },
+        {
+            "from": 1750,
+            "to": 1839,
+            "oldName": "Sebastiankirch-Gasse"
+        }
+    ],
+    "Skalitzer Straße": [
+        {
+            "from": 1849,
+            "to": 1868,
+            "oldName": "Kottbusser Kommunikation"
+        },
+        {
+            "from": 1849,
+            "to": 1868,
+            "oldName": "Lausitzer Kommunikation"
+        }
+    ],
+    "Spreewaldplatz": [
+        {
+            "from": 1880,
+            "to": 1949,
+            "oldName": "Wendenstraße"
+        }
+    ],
+    "Stallschreiberstraße": [
+        {
+            "from": 1650,
+            "to": 1847,
+            "oldName": "Stallschreibergasse"
+        }
+    ],
+    "Stresemannstraße": [
+        {
+            "from": 1831,
+            "to": 1867,
+            "oldName": "Hirschelstraße"
+        },
+        {
+            "from": 1845,
+            "to": 1867,
+            "oldName": "Potsdamer Kommunikation"
+        },
+        {
+            "from": 1935,
+            "to": 1947,
+            "oldName": "Saarlandstraße"
+        },
+        {
+            "from": 1867,
+            "to": 1936,
+            "oldName": "Königgrätzer Straße"
+        }
+    ],
+    "Ebertstraße": [
+        {
+            "from": 1831,
+            "to": 1867,
+            "oldName": "Schulgartenstraße"
+        },
+        {
+            "from": 1845,
+            "to": 1867,
+            "oldName": "Brandenburgische Kommunikation"
+        },
+        {
+            "from": 1915,
+            "to": 1925,
+            "oldName": "Budapester Straße"
+        },
+        {
+            "from": 1767,
+            "to": 1859,
+            "oldName": "Kasernenstraße"
+        },
+        {
+            "from": 1859,
+            "to": 1925,
+            "oldName": "Sommerstraße"
+        },
+        {
+            "from": 1925,
+            "to": 1933,
+            "oldName": "Friedrich-Ebert-Straße"
+        },
+        {
+            "from": 1933,
+            "to": 1945,
+            "oldName": "Hermann-Göring-Straße"
+        },
+        {
+            "from": 1867,
+            "to": 1936,
+            "oldName": "Königgrätzer Straße"
+        }
+    ],
+    "Südstern": [
+        {
+            "from": 1893,
+            "to": 1938,
+            "oldName": "Kaiser-Friedrich-Platz"
+        },
+        {
+            "from": 1938,
+            "to": 1947,
+            "oldName": "Gardepionierplatz"
+        }
+    ],
+    "Tauentzienstraße": [
+        {
+            "from": 1862,
+            "to": 1864,
+            "oldName": "Gürtelstraße"
+        }
+    ],
+    "Wittenbergplatz": [
+        {
+            "from": 1862,
+            "to": 1864,
+            "oldName": "Gürtelstraße"
+        }
+    ],
+    "Kleiststraße": [
+        {
+            "from": 1862,
+            "to": 1864,
+            "oldName": "Gürtelstraße"
+        }
+    ],
+    "Nollendorfplatz": [
+        {
+            "from": 1862,
+            "to": 1864,
+            "oldName": "Gürtelstraße"
+        }
+    ],
+    "Bülowstraße": [
+        {
+            "from": 1862,
+            "to": 1864,
+            "oldName": "Gürtelstraße"
+        }
+    ],
+    "Dennewitzplatz": [
+        {
+            "from": 1862,
+            "to": 1864,
+            "oldName": "Gürtelstraße"
+        }
+    ],
+    "Goebenstraße": [
+        {
+            "from": 1862,
+            "to": 1864,
+            "oldName": "Gürtelstraße"
+        }
+    ],
+    "Yorckstraße": [
+        {
+            "from": 1862,
+            "to": 1864,
+            "oldName": "Gürtelstraße"
+        },
+        {
+            "from": 1864,
+            "to": 1885,
+            "oldName": "Blücherstraße"
+        }
+    ],
+    "Waldemarstraße": [
+        {
+            "from": 1863,
+            "to": 1864,
+            "oldName": "Schulzes Hof"
+        },
+        {
+            "from": 1864,
+            "to": 1949,
+            "oldName": "Buckower Straße"
+        }
+    ],
+    "Wiener Straße": [
+        {
+            "from": 1870,
+            "to": 1873,
+            "oldName": "Verlängerte Oranienstraße"
+        }
+    ],
     "Ackerstraße": [
         {
             "from": 1752,
@@ -45,28 +805,6 @@ var changes = {
             "from": 1817,
             "to": 1951,
             "oldName": "Grenadierstraße"
-        }
-    ],
-    "Alte Jakobstraße": [
-        {
-            "from": 1680,
-            "to": 1778,
-            "oldName": "Cöpnicksche Vorstraße"
-        },
-        {
-            "from": 1699,
-            "to": 1723,
-            "oldName": "Am Kirchhofe"
-        },
-        {
-            "from": 1699,
-            "to": 1723,
-            "oldName": "Gegen der Kirche"
-        },
-        {
-            "from": 1716,
-            "to": 1778,
-            "oldName": "Jacobs Straße"
         }
     ],
     "Alte Schönhauser Straße": [
@@ -186,23 +924,6 @@ var changes = {
             "from": 1752,
             "to": 1801,
             "oldName": "Vierte Reihe im Neuen Voigtland"
-        }
-    ],
-    "Bethaniendamm": [
-        {
-            "from": 1849,
-            "to": 1937,
-            "oldName": "Bethanienufer"
-        },
-        {
-            "from": 1849,
-            "to": 1937,
-            "oldName": "Mariannenufer"
-        },
-        {
-            "from": 1937,
-            "to": 1947,
-            "oldName": "Felsendamm"
         }
     ],
     "Beuthstraße": [
@@ -376,74 +1097,6 @@ var changes = {
             "from": 1951,
             "to": 1995,
             "oldName": "Clara-Zetkin-Straße"
-        }
-    ],
-    "Dresdener Straße": [
-        {
-            "from": 1650,
-            "to": 1772,
-            "oldName": "Rixdorfer Straße"
-        },
-        {
-            "from": 1550,
-            "to": 1650,
-            "oldName": "Rixdorfer Damm"
-        }
-    ],
-    "Kottbusser Damm": [
-        {
-            "from": 1550,
-            "to": 1650,
-            "oldName": "Rixdorfer Damm"
-        }
-    ],
-    "Kottbusser Straße": [
-        {
-            "from": 1550,
-            "to": 1650,
-            "oldName": "Rixdorfer Damm"
-        }
-    ],
-    "Ebertstraße": [
-        {
-            "from": 1831,
-            "to": 1867,
-            "oldName": "Schulgartenstraße"
-        },
-        {
-            "from": 1845,
-            "to": 1867,
-            "oldName": "Brandenburgische Kommunikation"
-        },
-        {
-            "from": 1915,
-            "to": 1925,
-            "oldName": "Budapester Straße"
-        },
-        {
-            "from": 1767,
-            "to": 1859,
-            "oldName": "Kasernenstraße"
-        },
-        {
-            "from": 1859,
-            "to": 1925,
-            "oldName": "Sommerstraße"
-        },
-        {
-            "from": 1925,
-            "to": 1933,
-            "oldName": "Friedrich-Ebert-Straße"
-        },
-        {
-            "from": 1933,
-            "to": 1945,
-            "oldName": "Hermann-Göring-Straße"
-        },
-        {
-            "from": 1867,
-            "to": 1936,
-            "oldName": "Königgrätzer Straße"
         }
     ],
     "Friedrich-Ebert-Platz": [
@@ -797,18 +1450,6 @@ var changes = {
             "oldName": "Kaiser-Franz-Grenadier-Platz"
         }
     ],
-    "Heinrich-Heine-Straße": [
-        {
-            "from": 1843,
-            "to": 1960,
-            "oldName": "Neanderstraße"
-        },
-        {
-            "from": 1849,
-            "to": 1960,
-            "oldName": "Prinzenstraße"
-        }
-    ],
     "Hirtenstraße": [
         {
             "from": 1700,
@@ -1144,45 +1785,6 @@ var changes = {
             "oldName": "Klostergasse"
         }
     ],
-    "Kommandantenstraße": [
-        {
-            "from": 1678,
-            "to": 1700,
-            "oldName": "Scheunengasse"
-        },
-        {
-            "from": 1700,
-            "to": 1763,
-            "oldName": "Jouanengasse"
-        },
-        {
-            "from": 1763,
-            "to": 1846,
-            "oldName": "Neue Kommandantenstraße"
-        }
-    ],
-    "Köpenicker Straße": [
-        {
-            "from": 1589,
-            "to": 1589,
-            "oldName": "Der lange Damm"
-        },
-        {
-            "from": 1589,
-            "to": 1589,
-            "oldName": "Der neue Damm"
-        },
-        {
-            "from": 1589,
-            "to": 1589,
-            "oldName": "Die neue Trift"
-        },
-        {
-            "from": 1589,
-            "to": 1589,
-            "oldName": "Weidendamm"
-        }
-    ],
     "Koppenplatz": [
         {
             "from": 1704,
@@ -1241,32 +1843,6 @@ var changes = {
             "oldName": "Leninallee"
         }
     ],
-    "Legiendamm": [
-        {
-            "from": 1937,
-            "to": 1947,
-            "oldName": "Kösterdamm"
-        },
-        {
-            "from": 1849,
-            "to": 1937,
-            "oldName": "Luisenufer"
-        }
-    ],
-    "Segitzdamm": [
-        {
-            "from": 1849,
-            "to": 1937,
-            "oldName": "Luisenufer"
-        }
-    ],
-    "Oranienplatz": [
-        {
-            "from": 1849,
-            "to": 1937,
-            "oldName": "Luisenufer"
-        }
-    ],
     "Leipziger Platz": [
         {
             "from": 1734,
@@ -1279,39 +1855,6 @@ var changes = {
             "from": 1691,
             "to": 1863,
             "oldName": "An der Spitalbrücke"
-        }
-    ],
-    "Leuschnerdamm": [
-        {
-            "from": 1937,
-            "to": 1947,
-            "oldName": "Schröderdamm"
-        },
-        {
-            "from": 1849,
-            "to": 1937,
-            "oldName": "Elisabethufer"
-        }
-    ],
-    "Erkelenzdamm": [
-        {
-            "from": 1849,
-            "to": 1937,
-            "oldName": "Elisabethufer"
-        }
-    ],
-    "Lindenstraße": [
-        {
-            "from": 1640,
-            "to": 1700,
-            "oldName": "Weg nach Tempelhof"
-        }
-    ],
-    "Axel-Springer-Straße": [
-        {
-            "from": 1640,
-            "to": 1700,
-            "oldName": "Weg nach Tempelhof"
         }
     ],
     "Luisenstraße": [
@@ -1471,13 +2014,6 @@ var changes = {
             "from": 1678,
             "to": 1790,
             "oldName": "Kirchstraße"
-        }
-    ],
-    "Niederkirchnerstraße": [
-        {
-            "from": 1891,
-            "to": 1951,
-            "oldName": "Prinz-Albrecht-Straße"
         }
     ],
     "Niederlagstraße": [
@@ -1974,23 +2510,6 @@ var changes = {
             "oldName": "Verlorener Weg"
         }
     ],
-    "Sebastianstraße": [
-        {
-            "from": 1699,
-            "to": 1723,
-            "oldName": "Kirchgasse"
-        },
-        {
-            "from": 1723,
-            "to": 1750,
-            "oldName": "Kirchstraße"
-        },
-        {
-            "from": 1750,
-            "to": 1839,
-            "oldName": "Sebastiankirch-Gasse"
-        }
-    ],
     "Singerstraße": [
         {
             "from": 1748,
@@ -2091,13 +2610,6 @@ var changes = {
             "oldName": "Spittelmarktstraße"
         }
     ],
-    "Stallschreiberstraße": [
-        {
-            "from": 1650,
-            "to": 1847,
-            "oldName": "Stallschreibergasse"
-        }
-    ],
     "Steinstraße": [
         {
             "from": 1700,
@@ -2115,28 +2627,6 @@ var changes = {
             "from": 1966,
             "to": 1991,
             "oldName": "Egon-Schultz-Straße"
-        }
-    ],
-    "Stresemannstraße": [
-        {
-            "from": 1831,
-            "to": 1867,
-            "oldName": "Hirschelstraße"
-        },
-        {
-            "from": 1845,
-            "to": 1867,
-            "oldName": "Potsdamer Kommunikation"
-        },
-        {
-            "from": 1935,
-            "to": 1947,
-            "oldName": "Saarlandstraße"
-        },
-        {
-            "from": 1867,
-            "to": 1936,
-            "oldName": "Königgrätzer Straße"
         }
     ],
     "Taubenstraße": [
@@ -2365,6 +2855,334 @@ var changes = {
             "from": 1861,
             "to": 1953,
             "oldName": "Koblankstraße"
+        }
+    ],
+    "Altenbraker Weg": [
+        {
+            "from": 1900,
+            "to": 1935,
+            "oldName": "Bodestraße"
+        }
+    ],
+    "Aronsstraße": [
+        {
+            "from": 1926,
+            "to": 1934,
+            "oldName": "Leo-Arons-Straße"
+        },
+        {
+            "from": 1934,
+            "to": 1973,
+            "oldName": "Sackführerdamm"
+        }
+    ],
+    "Berthelsdorfer Straße": [
+        {
+            "from": 1900,
+            "to": 1904,
+            "oldName": "Triftweg"
+        }
+    ],
+    "Bornsdorfer Straße": [
+        {
+            "from": 1895,
+            "to": 1939,
+            "oldName": "Waßmannsdorfer Straße"
+        }
+    ],
+    "Bouchéstraße": [
+        {
+            "from": 1842,
+            "to": 1896,
+            "oldName": "Bouché-Weg"
+        }
+    ],
+    "Braunschweiger Straße": [
+        {
+            "from": 1895,
+            "to": 1964,
+            "oldName": "Thüringer Straße"
+        }
+    ],
+    "Briesestraße": [
+        {
+            "from": 1877,
+            "to": 1950,
+            "oldName": "Prinz-Handjery-Straße"
+        }
+    ],
+    "Donaustraße": [
+        {
+            "from": 1906,
+            "to": 1915,
+            "oldName": "Neue Donaustraße"
+        }
+    ],
+    "Elsenstraße": [
+        {
+            "from": 1842,
+            "to": 1895,
+            "oldName": "Elsen-Allee"
+        }
+    ],
+    "Flughafenstraße": [
+        {
+            "from": 1877,
+            "to": 1928,
+            "oldName": "Wanzlickstraße"
+        },
+        {
+            "from": 1895,
+            "to": 1928,
+            "oldName": "Münchener Straße"
+        }
+    ],
+    "Gerlachsheimer Weg": [
+        {
+            "from": 1897,
+            "to": 1983,
+            "oldName": "Gärtnerstraße"
+        }
+    ],
+    "Wanzlikpfad": [
+        {
+            "from": 1897,
+            "to": 1983,
+            "oldName": "Gärtnerstraße"
+        }
+    ],
+    "Herrnhuter Weg": [
+        {
+            "from": 1877,
+            "to": 1938,
+            "oldName": "Goethestraße"
+        },
+        {
+            "from": 1938,
+            "to": 1947,
+            "oldName": "Langnerweg"
+        }
+    ],
+    "Karl-Marx-Platz": [
+        {
+            "from": 1902,
+            "to": 1950,
+            "oldName": "Hohenzollernplatz"
+        }
+    ],
+    "Karl-Marx-Straße": [
+        {
+            "from": 1877,
+            "to": 1947,
+            "oldName": "Bergstraße"
+        },
+        {
+            "from": 1874,
+            "to": 1947,
+            "oldName": "Berliner Straße"
+        }
+    ],
+    "Karpfenteichstraße": [
+        {
+            "from": 1901,
+            "to": 1905,
+            "oldName": "Sackführerdamm"
+        }
+    ],
+    "Kiefholzstraße": [
+        {
+            "from": 1842,
+            "to": 1895,
+            "oldName": "Kiefholzweg"
+        }
+    ],
+    "Kiehlufer": [
+        {
+            "from": 1905,
+            "to": 1934,
+            "oldName": "Köllnisches Ufer"
+        }
+    ],
+    "Kienitzer Straße": [
+        {
+            "from": 1874,
+            "to": 1950,
+            "oldName": "Steinmetzstraße"
+        }
+    ],
+    "Kirchhofstraße": [
+        {
+            "from": 1750,
+            "to": 1834,
+            "oldName": "Alter Kotzemarkenweg"
+        },
+        {
+            "from": 1800,
+            "to": 1834,
+            "oldName": "Taboritenweg"
+        }
+    ],
+    "Maybachufer": [
+        {
+            "from": 1859,
+            "to": 1883,
+            "oldName": "Wiesenufer"
+        }
+    ],
+    "Morusstraße": [
+        {
+            "from": 1877,
+            "to": 1950,
+            "oldName": "Lessingstraße"
+        }
+    ],
+    "Neuköllnische Allee": [
+        {
+            "from": 1857,
+            "to": 1902,
+            "oldName": "Kaiserstraße"
+        },
+        {
+            "from": 1882,
+            "to": 1912,
+            "oldName": "Kanner Chaussee"
+        },
+        {
+            "from": 1912,
+            "to": 1937,
+            "oldName": "Köllnische Allee"
+        },
+        {
+            "from": 1902,
+            "to": 1910,
+            "oldName": "Rixdorf-Canner-Kreischaussee"
+        }
+    ],
+    "Forsthausallee": [
+        {
+            "from": 1882,
+            "to": 1912,
+            "oldName": "Kanner Chaussee"
+        }
+    ],
+    "Rixdorfer Straße": [
+        {
+            "from": 1882,
+            "to": 1912,
+            "oldName": "Kanner Chaussee"
+        }
+    ],
+    "Südostallee": [
+        {
+            "from": 1882,
+            "to": 1912,
+            "oldName": "Kanner Chaussee"
+        },
+        {
+            "from": 1902,
+            "to": 1910,
+            "oldName": "Rixdorf-Canner-Kreischaussee"
+        }
+    ],
+    "Niemetzstraße": [
+        {
+            "from": 1912,
+            "to": 1937,
+            "oldName": "Köllnische Allee"
+        }
+    ],
+    "Lahnstraße": [
+        {
+            "from": 1912,
+            "to": 1937,
+            "oldName": "Köllnische Allee"
+        }
+    ],
+    "Richardstraße": [
+        {
+            "from": 1874,
+            "to": 1947,
+            "oldName": "Berliner Straße"
+        }
+    ],
+    "Rollbergstraße": [
+        {
+            "from": 1877,
+            "to": 1950,
+            "oldName": "Jägerstraße"
+        }
+    ],
+    "Schierker Platz": [
+        {
+            "from": 1909,
+            "to": 1939,
+            "oldName": "Stubenrauchplatz"
+        }
+    ],
+    "Silbersteinstraße": [
+        {
+            "from": 1877,
+            "to": 1950,
+            "oldName": "Knesebeckstraße"
+        }
+    ],
+    "Sonnenallee": [
+        {
+            "from": 1891,
+            "to": 1938,
+            "oldName": "Kaiser-Friedrich-Straße"
+        },
+        {
+            "from": 1938,
+            "to": 1947,
+            "oldName": "Braunauer Straße"
+        }
+    ],
+    "Thomasstraße": [
+        {
+            "from": 1750,
+            "to": 1950,
+            "oldName": "Grüner Weg"
+        }
+    ],
+    "Uthmannstraße": [
+        {
+            "from": 1827,
+            "to": 1947,
+            "oldName": "Rosenstraße"
+        },
+        {
+            "from": 1938,
+            "to": 1947,
+            "oldName": "Richardsburgweg"
+        }
+    ],
+    "Walterstraße": [
+        {
+            "from": 1934,
+            "to": 1947,
+            "oldName": "Willi-Walter-Straße"
+        }
+    ],
+    "Wegastraße": [
+        {
+            "from": 1922,
+            "to": 1931,
+            "oldName": "Wassermannstraße"
+        }
+    ],
+    "Werbellinstraße": [
+        {
+            "from": 1877,
+            "to": 1950,
+            "oldName": "Ziethenstraße"
+        }
+    ],
+    "Zwiestädter Straße": [
+        {
+            "from": 1905,
+            "to": 1938,
+            "oldName": "Johann-Hus-Straße"
         }
     ]
 };

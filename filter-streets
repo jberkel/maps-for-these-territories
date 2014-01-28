@@ -1,0 +1,3 @@
+#!/bin/sh
+
+osmosis --read-xml file="berlin-latest.osm"  --way-key keyList="highway" --used-node --write-xml file="berlin-streets.osm"

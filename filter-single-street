@@ -1,0 +1,3 @@
+#!/bin/sh
+
+osmosis --read-xml file="berlin-streets.osm"  --tf accept-ways name=Ackerstraße --tf reject-relations --used-node --write-xml file="acker.osm"

@@ -25,6 +25,7 @@ function init() {
         }
     }
 
+    var soundModule = new SoundModule();
 
     function animate() {
         requestAnimationFrame(animate);
@@ -33,6 +34,7 @@ function init() {
             controls.update();
         }
         render();
+
     }
 
     function render() {

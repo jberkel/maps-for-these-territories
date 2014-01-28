@@ -13,7 +13,7 @@ Oscillator = function(timestamps, coordinates){
 	}
 
 	var distanceToCam = function(vertor2){
-		var distance = distanceVector(new THREE.Vector2(currentCamPos, vertor2);
+		var distance = distanceVector(new THREE.Vector2(currentCamPos, vertor2));
 		return distance;
 	}
 

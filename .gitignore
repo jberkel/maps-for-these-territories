@@ -1,5 +1,11 @@
 .idea
+data/
 .ruby-gemset
 .ruby-version
 *.json
 *.osm
+*.csv
+*.kml
+*.iml
+node_modules/
+three.js

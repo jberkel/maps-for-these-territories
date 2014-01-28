@@ -37,6 +37,7 @@ var alexanderPlatz = new THREE.Vector2(52.523319, 13.411802);
 function streetLines(name, geoJSON) {
     var lines = [];
     var geometries = streetGeometries(geoJSON, function(vector) {
+//        return true;
         return distanceVector(vector, alexanderPlatz) < 7;
     });
 

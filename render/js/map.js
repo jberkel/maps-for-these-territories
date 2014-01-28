@@ -44,20 +44,27 @@ Map = function(camera) {
 
         var tween = new TWEEN.Tween(from).to(to, 2000);
 
-        console.log("zoomTo("+from+", "+to+")");
+        console.log("zoomTo("+name+")");
 
-        var camera = this.camera;
+        console.log(from);
+        console.log(to);
+
+        var position = this.camera.position;
+
         tween.onUpdate(function() {
-            camera.position.x = from.x;
-            camera.position.y = from.y;
-            camera.position.y = from.z;
+            position.x = this.x;
+            position.y = this.y;
+            position.y = this.z;
         });
+
         tween.onComplete(function() {
             console.log("completed");
+
             if (completed) {
                 completed();
             }
         });
+
         tween.start();
     }
 };

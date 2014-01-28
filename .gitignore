@@ -8,3 +8,4 @@ data/
 *.kml
 *.iml
 node_modules/
+three.js/

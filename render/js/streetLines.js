@@ -1,22 +1,9 @@
-var alexanderPlatz = new THREE.Vector2(52.523319, 13.411802);
-
-function streetMerged(geometries) {
-    var mergedGeometry = new THREE.Geometry();
-    for (var i = 0; i < geometries.length; i++) {
-        var geo = geometries[i];
-        THREE.GeometryUtils.merge(mergedGeometry, geo);
-    }
-    return mergedGeometry;
-}
-
-function streetGeometries(geoJson) {
+function streetGeometries(geoJson, filter) {
     var geometries = [];
     for (var i=0; i<geoJson.features.length; i++) {
-
         var feature = geoJson.features[i];
 
         if (feature.geometry.type == 'LineString') {
-
             var lineGeometry = new THREE.Geometry();
             lineGeometry.name = feature.properties.highway;
 
@@ -26,13 +13,11 @@ function streetGeometries(geoJson) {
                 var longitude = coord[0];
                 var latitude  = coord[1];
 
-
-                if (distanceVector(new THREE.Vector2(latitude, longitude), alexanderPlatz) > 7) {
+                if (filter && !filter(new THREE.Vector2(latitude, longitude))) {
                     continue;
                 }
 
                 var screenCoord = screenCoordinates(latitude, longitude, boundingBox());
-
                 lineGeometry.vertices.push(screenCoord);
             }
             geometries.push(lineGeometry);
@@ -47,9 +32,14 @@ function materialForGeometry(geometry) {
     });
 }
 
+var alexanderPlatz = new THREE.Vector2(52.523319, 13.411802);
+
 function streetLines(name, geoJSON) {
     var lines = [];
-    var geometries = streetGeometries(geoJSON);
+    var geometries = streetGeometries(geoJSON, function(vector) {
+        return distanceVector(vector, alexanderPlatz) < 7;
+    });
+
     for (var i = 0; i < geometries.length; i++) {
         var geometry = geometries[i];
         var line = new THREE.Line(

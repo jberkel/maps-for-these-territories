@@ -1,5 +1,7 @@
-Map = function() {
+Map = function(camera) {
     THREE.Scene.call( this );
+
+    this.camera = camera;
     this.streets = {};
 
     this.addStreet = function(name, geoJSON) {
@@ -21,6 +23,43 @@ Map = function() {
             obj.material.color = color;
         }
     };
+
+    this.zoomTo = function(name, completed) {
+        var lines = this.streets[name];
+        var firstLine = lines[0];
+        var vertice = firstLine.geometry.vertices[0];
+        console.log(vertice);
+
+        var from = {
+            x: this.camera.position.x,
+            y: this.camera.position.y,
+            z: this.camera.position.z
+        };
+
+        var to = {
+            x: vertice.x,
+            y: vertice.y,
+            z: 0.01
+        }
+
+        var tween = new TWEEN.Tween(from).to(to, 2000);
+
+        console.log("zoomTo("+from+", "+to+")");
+
+        var camera = this.camera;
+        tween.onUpdate(function() {
+            camera.position.x = from.x;
+            camera.position.y = from.y;
+            camera.position.y = from.z;
+        });
+        tween.onComplete(function() {
+            console.log("completed");
+            if (completed) {
+                completed();
+            }
+        });
+        tween.start();
+    }
 };
 
 Map.prototype = Object.create(THREE.Scene.prototype);

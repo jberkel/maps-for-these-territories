@@ -1,12 +1,13 @@
 function init() {
-    var map = new Map();
     var projector = new THREE.Projector();
-    var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 1000);
+    var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000);
+    var map = new Map(camera);
     var controls = new THREE.OrbitControls(camera);
     controls.addEventListener('change', render);
 
+
     var renderer = new THREE.WebGLRenderer();
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize(window.innerWidth, window.innerHeight);
 
     for (var name in streets) {
         if (streets.hasOwnProperty(name)) {
@@ -21,6 +22,7 @@ function init() {
 
     function animate() {
         requestAnimationFrame(animate);
+        TWEEN.update();
         render();
         controls.update();
     }
@@ -57,6 +59,8 @@ function init() {
 
     function onSelected(names) {
         console.log(names);
+        var first = names[0];
+        map.zoomTo(first);
     }
 
     animate();
@@ -65,4 +69,23 @@ function init() {
 
     document.body.appendChild(renderer.domElement);
     document.addEventListener('mousedown', onDocumentMouseDown, false);
+
+    window.map = map;
+
+    function zoomToRandomStreet() {
+        var streetNames = Object.keys(streets);
+        var index = Math.round(Math.random() * streetNames.length);
+
+        var randomStreet = streetNames[index];
+
+        if (randomStreet) {
+            console.log("zooming to "+randomStreet);
+            map.zoomTo(randomStreet, zoomToRandomStreet);
+        } else {
+            console.log("not found");
+        }
+
+    }
+
+//    zoomToRandomStreet();
 }

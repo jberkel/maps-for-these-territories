@@ -1,15 +1,13 @@
 Map = function() {
     THREE.Scene.call( this );
-
     this.streets = {};
 
     this.addStreet = function(name, geoJSON) {
-        var lines = streetLines(geoJSON);
+        var lines = streetLines(name, geoJSON);
         for (var i = 0; i < lines.length; i++) {
             var line = lines[i];
             this.add(line);
         }
-
         this.streets[name] = lines;
     };
 

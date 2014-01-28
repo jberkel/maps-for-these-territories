@@ -77,7 +77,7 @@ if (process.argv.length < 3) {
 
     });
     var serializedJson = JSON.stringify(merged, null, 4)
-    fs.writeFile("merged.json", serializedJson, function(err) {
+    fs.writeFile("merged_geo.json", serializedJson, function(err) {
         if (err) {
             console.log("error writing file: "+err);
         }

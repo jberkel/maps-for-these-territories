@@ -53,7 +53,7 @@ function extend(target) {
 
 function serialize(data) {
     var serializedJson = JSON.stringify(data, null, 4)
-    fs.writeFile("merged_csv.json", serializedJson, function(err) {
+    fs.writeFile("merged_changes.json", serializedJson, function(err) {
         if (err) {
             console.log("error writing file: "+err);
         }

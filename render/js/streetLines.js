@@ -47,17 +47,18 @@ function materialForGeometry(geometry) {
     });
 }
 
-function streetLines(geoJSON) {
+function streetLines(name, geoJSON) {
     var lines = [];
     var geometries = streetGeometries(geoJSON);
-
     for (var i = 0; i < geometries.length; i++) {
         var geometry = geometries[i];
-        lines.push(new THREE.Line(
+        var line = new THREE.Line(
             geometry,
             materialForGeometry(geometry),
             THREE.LineStrip
-        ));
+        )
+        line.name = name;
+        lines.push(line);
     }
     return lines;
 }

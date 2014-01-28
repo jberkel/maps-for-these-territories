@@ -1,22 +1,19 @@
 function init() {
     var projector = new THREE.Projector();
     var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000);
-
     camera.position.x = 0.5;
     camera.position.y = 0.5;
     camera.position.z = 1.5;
 
-
-    var map = new Map(camera);
-
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-
 
     var controls = new THREE.OrbitControls(camera);
     controls.addEventListener('change', render);
     controls.target.x = 0.5;
     controls.target.y = 0.5;
+
+    var map = new Map(camera, controls);
 
     for (var name in streets) {
         if (streets.hasOwnProperty(name)) {
@@ -30,9 +27,7 @@ function init() {
     function animate() {
         requestAnimationFrame(animate);
         TWEEN.update();
-        if (controls) {
-            controls.update();
-        }
+//        controls.update();
         render();
 
     }
@@ -42,8 +37,9 @@ function init() {
     }
 
     function onDocumentMouseDown(event) {
-        event.preventDefault();
         console.log(event);
+
+        event.preventDefault();
         var vector = new THREE.Vector3(
               ( event.clientX / window.innerWidth )  * 2 - 1,
             - ( event.clientY / window.innerHeight ) * 2 + 1,
@@ -78,24 +74,21 @@ function init() {
     renderChanges(map, changes);
 
     document.body.appendChild(renderer.domElement);
-//    document.addEventListener('mousedown', onDocumentMouseDown, false);
+    document.addEventListener('mousedown', onDocumentMouseDown, false);
 
     window.map = map;
 
-//    function zoomToRandomStreet() {
-//        var streetNames = Object.keys(streets);
-//        var index = Math.round(Math.random() * streetNames.length);
-//
-//        var randomStreet = streetNames[index];
-//
-//        if (randomStreet) {
-//            console.log("zooming to "+randomStreet);
-//            map.zoomTo(randomStreet, zoomToRandomStreet);
-//        } else {
-//            console.log("not found");
-//        }
-//
-//    }
-//    zoomToRandomStreet();
+    function zoomToRandomStreet(list) {
+        var index = Math.round(Math.random() * list.length);
+        var randomStreet = list[index];
 
+        if (randomStreet) {
+            console.log("zooming to "+randomStreet);
+            map.zoomTo(randomStreet, function() { zoomToRandomStreet(list); });
+        } else {
+            console.log("not found");
+        }
+    }
+
+    zoomToRandomStreet(Object.keys(changes));
 }

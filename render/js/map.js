@@ -1,7 +1,9 @@
-Map = function(camera) {
+Map = function(camera, controls) {
     THREE.Scene.call( this );
 
     this.camera = camera;
+    this.controls = controls;
+
     this.streets = {};
 
     this.addStreet = function(name, geoJSON) {
@@ -27,7 +29,7 @@ Map = function(camera) {
     this.zoomTo = function(name, completed) {
         var lines = this.streets[name];
         var firstLine = lines[0];
-        var vertice = firstLine.geometry.vertices[0];
+        var vertice   = firstLine.geometry.vertices[0];
         console.log(vertice);
 
         var from = {
@@ -39,10 +41,12 @@ Map = function(camera) {
         var to = {
             x: vertice.x,
             y: vertice.y,
-            z: 0.01
+            z: (Math.random() * 0.3) + 0.1
         }
 
-        var tween = new TWEEN.Tween(from).to(to, 2000);
+        var tween = new TWEEN.Tween(from)
+            .to(to, 3000)
+            .easing(TWEEN.Easing.Cubic.InOut);
 
         console.log("zoomTo("+name+")");
 
@@ -52,9 +56,9 @@ Map = function(camera) {
         var position = this.camera.position;
 
         tween.onUpdate(function() {
-            position.x = this.x;
-            position.y = this.y;
-            position.y = this.z;
+            position.x = from.x;
+            position.y = from.y;
+            position.z = from.z;
         });
 
         tween.onComplete(function() {
@@ -64,7 +68,6 @@ Map = function(camera) {
                 completed();
             }
         });
-
         tween.start();
     }
 };

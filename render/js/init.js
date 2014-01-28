@@ -13,8 +13,7 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 
 
-
-    var controls = new THREE.OrbitControls(camera, renderer.domElement);
+    var controls = new THREE.OrbitControls(camera);
     controls.addEventListener('change', render);
     controls.target.x = 0.5;
     controls.target.y = 0.5;

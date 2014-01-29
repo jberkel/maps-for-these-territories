@@ -22,15 +22,22 @@ function init() {
         }
     }
 
+    var stats = new Stats();
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.top = '0px';
+    stats.domElement.style.right = '0px';
+    document.body.appendChild( stats.domElement );
+
     soundModule = new SoundModule(map);
 
     function animate() {
         requestAnimationFrame(animate);
         TWEEN.update();
 //        controls.update();
+
         render();
-        //console.log(camera.position);
         soundModule.updateSpat(camera.position)
+        stats.update();
     }
 
     function render() {

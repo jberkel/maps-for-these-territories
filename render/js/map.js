@@ -88,7 +88,7 @@ Map = function(camera, controls) {
 
         tween.onComplete(function() {
             scope.setColorForStreet(name, oldColor);
-            
+
             console.log("completed");
 
             if (completed) {

@@ -104,11 +104,23 @@ Map = function(camera, controls, soundModule) {
         for (var key in properties) {
             var li = document.createElement("li");
             li.innerText = key + ": " + properties[key].join(', ');
-            string += li.innerText;
             ul.appendChild(li);
+
+        //    string += li.innerText;
         }
 
+
+        var name = properties['name'];
+
+        for (var x=0; x < 5; x++) {
+          string += name;
+        }
+
+
+
         soundModule.oscillator.updateBuffer(string);
+
+
         document.body.appendChild(ul);
     }
 

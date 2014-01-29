@@ -46,6 +46,7 @@ function init() {
         console.log(event);
 
         event.preventDefault();
+
         var vector = new THREE.Vector3(
               ( event.clientX / window.innerWidth )  * 2 - 1,
             - ( event.clientY / window.innerHeight ) * 2 + 1,
@@ -102,4 +103,5 @@ function init() {
     }
 
     zoomToRandomStreet(Object.keys(streets));
+//    soundModule.play();
 }

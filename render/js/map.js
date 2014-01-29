@@ -61,6 +61,11 @@ Map = function(camera, controls) {
 
         var vertice = this.getCoordinatesForStreet(name);
 
+        if (vertice.x == 0 && vertice.y == 0) {
+            completed();
+            return;
+        }
+
         var from = {
             x: this.camera.position.x,
             y: this.camera.position.y,

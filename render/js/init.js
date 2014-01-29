@@ -101,5 +101,5 @@ function init() {
         }
     }
 
-    zoomToRandomStreet(Object.keys(changes));
+    zoomToRandomStreet(Object.keys(streets));
 }

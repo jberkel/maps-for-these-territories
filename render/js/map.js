@@ -62,7 +62,7 @@ Map = function(camera, controls) {
             var properties = {};
             for (var i = 0; i < lines.length; i++) {
                 var line = lines[i];
-                extend(properties, line.userData);
+                add(properties, line.userData);
             }
             return properties;
         } else {
@@ -101,7 +101,7 @@ Map = function(camera, controls) {
         ul.className = 'propertyList';
         for (var key in properties) {
             var li = document.createElement("li");
-            li.innerText = key + ": " + properties[key];
+            li.innerText = key + ": " + properties[key].join(', ');
             ul.appendChild(li);
         }
         document.body.appendChild(ul);

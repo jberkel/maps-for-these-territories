@@ -3,7 +3,7 @@ SoundModule = function(map) {
 	var timestamps=[];	
 	var feature;
 
-	oscillator = new Oscillator(timestamps, map.getCoordinatesForStreet("Friedrichstraße"));
+	oscillator = new Oscillator(timestamps, map.getCoordinatesForStreet("Hermannplatz"));
 
 
 	this.updateSpat = function(vector3) {

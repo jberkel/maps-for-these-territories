@@ -23,10 +23,8 @@ function init() {
     }
 
     var stats = new Stats();
-    stats.domElement.style.position = 'absolute';
-    stats.domElement.style.top = '0px';
-    stats.domElement.style.right = '0px';
-    document.body.appendChild( stats.domElement );
+    stats.domElement.id = "stats";
+    document.body.appendChild(stats.domElement);
 
     soundModule = new SoundModule(map);
 

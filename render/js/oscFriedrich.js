@@ -10,11 +10,11 @@ Oscillator = function(timestamps, coordinates) {
 	var osc = T("reverb", {room:0.9, damp:0.2, mix:0.45}, add);*/
 	var currentCamPos = new THREE.Vector3();
 	var distance;
-	
+
 
 	this.updateSpat = function(vector3){
 		distance = coordinates.distanceTo(vector3);
-		console.log("distance="+distance);
+//		console.log("distance="+distance);
 	}
 
 

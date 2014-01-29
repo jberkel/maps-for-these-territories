@@ -49,7 +49,16 @@ Map = function(camera, controls) {
         return new THREE.Vector3();
     };
 
+    this.setHeading = function(title) {
+        var current = document.getElementById("current");
+        if (current) {
+            current.innerText = title;
+        }
+    };
+
     this.zoomTo = function(name, completed) {
+        this.setHeading(name);
+
         var vertice = this.getCoordinatesForStreet(name);
 
         var from = {

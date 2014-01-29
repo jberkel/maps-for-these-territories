@@ -37,7 +37,7 @@ Map = function(camera, controls) {
 
     this.getCoordinatesForStreet = function(name) {
         var lines = this.streets[name];
-        if (lines) {
+        if (lines && lines[0]) {
             var firstLine = lines[0];
             var vertice   = firstLine.geometry.vertices[0];
             if (vertice) {
@@ -56,8 +56,59 @@ Map = function(camera, controls) {
         }
     };
 
+    this.getProperties = function(name) {
+        var lines = this.streets[name];
+        if (lines) {
+            var properties = {};
+            for (var i = 0; i < lines.length; i++) {
+                var line = lines[i];
+                extend(properties, line.userData);
+            }
+            return properties;
+        } else {
+            return {};
+        }
+    }
+
+    this.showProperty = function(key, value) {
+        var span = document.createElement("div");
+        span.innerText = key + ": " + value;
+        span.className = "property";
+        var right = Math.round(Math.random() * (window.innerWidth / 2));
+        var top   = Math.round(Math.random() * (window.innerHeight / 2));
+
+        span.style.right = right+'px';
+        span.style.top   = top+'px';
+
+        document.body.appendChild(span);
+    };
+
+    this.showProperties = function(properties) {
+        //        var keys = Object.keys(properties);
+        //        var index = Math.round(Math.random() * keys.length);
+        //        var key = keys[index]
+        //        var property = properties[key];
+
+        var list = document.getElementsByClassName("propertyList");
+
+        for (var i = 0; i < list.length; i++) {
+            var obj = list[i];
+            document.body.removeChild(obj);
+        }
+
+
+        var ul = document.createElement("ul");
+        ul.className = 'propertyList';
+        for (var key in properties) {
+            var li = document.createElement("li");
+            li.innerText = key + ": " + properties[key];
+            ul.appendChild(li);
+        }
+        document.body.appendChild(ul);
+    }
+
     this.zoomTo = function(name, completed) {
-        this.setHeading(name);
+
 
         var vertice = this.getCoordinatesForStreet(name);
 
@@ -90,10 +141,19 @@ Map = function(camera, controls) {
         var position = this.camera.position;
 
         var oldColor = this.getColorFromStreet(name);
+        var properties = this.getProperties(name);
+
+
+
+        this.showProperties(properties);
+
+        console.log(properties);
 
         var scope = this;
         tween.onUpdate(function() {
-            scope.setColorForStreet(name, new THREE.Color(0x00ff00));
+            scope.setHeading(name);
+
+            scope.setColorForStreet(name, new THREE.Color(0xff00f0));
 
             position.x = from.x;
             position.y = from.y;

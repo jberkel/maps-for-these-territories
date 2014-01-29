@@ -5,6 +5,8 @@ function streetGeometries(geoJson, filter) {
 
         if (feature.geometry.type == 'LineString') {
             var lineGeometry = new THREE.Geometry();
+
+
             lineGeometry.name = feature.properties.highway;
 
             var coordinates = feature.geometry.coordinates;
@@ -20,7 +22,7 @@ function streetGeometries(geoJson, filter) {
                 var screenCoord = screenCoordinates(latitude, longitude, boundingBox());
                 lineGeometry.vertices.push(screenCoord);
             }
-            geometries.push(lineGeometry);
+            geometries.push({ geometry: lineGeometry, userData: feature.properties});
         }
     }
     return geometries;
@@ -37,17 +39,18 @@ var alexanderPlatz = new THREE.Vector2(52.523319, 13.411802);
 function streetLines(name, geoJSON) {
     var lines = [];
     var geometries = streetGeometries(geoJSON, function(vector) {
-//        return true;
         return distanceVector(vector, alexanderPlatz) < 7;
     });
 
     for (var i = 0; i < geometries.length; i++) {
         var geometry = geometries[i];
         var line = new THREE.Line(
-            geometry,
+            geometry.geometry,
             materialForGeometry(geometry),
             THREE.LineStrip
         )
+        line.userData = geometry.userData;
+
         line.name = name;
         lines.push(line);
     }

@@ -5,8 +5,9 @@ canvas {
 
 #current {
     position: absolute;
-    top: 0;
+    /*top: 0;*/
     color: green;
+    font-family: "Courier New";
     font-size: 44pt;
     z-index: 100;
     /*right: 0;*/
@@ -17,3 +18,25 @@ canvas {
     top: 0;
     right: 0;
 }
+
+.property {
+    font-family: "Courier New";
+    position: absolute;
+    color: darkgreen;
+    font-size: 42pt;
+    z-index: 100;
+}
+
+ul.propertyList {
+   font-family: "Courier New";
+   list-style-type: none;
+   position: absolute;
+   top: 30px;
+
+
+   font-size: 22pt;
+   text-shadow: 2px 2px #333333;
+   color: limegreen;
+}
+
+

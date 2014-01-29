@@ -13,7 +13,8 @@ function init() {
     controls.target.x = 0.5;
     controls.target.y = 0.5;
 
-    var map = new Map(camera, controls);
+    soundModule = new SoundModule();
+    var map = new Map(camera, controls, soundModule);
 
     for (var name in streets) {
         if (streets.hasOwnProperty(name)) {
@@ -26,7 +27,6 @@ function init() {
     stats.domElement.id = "stats";
     document.body.appendChild(stats.domElement);
 
-    soundModule = new SoundModule(map);
 
     function animate() {
         requestAnimationFrame(animate);
@@ -34,7 +34,7 @@ function init() {
 //        controls.update();
 
         render();
-        soundModule.updateSpat(camera.position)
+//        soundModule.updateSpat(camera.position)
         stats.update();
     }
 

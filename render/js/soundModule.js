@@ -1,20 +1,20 @@
-SoundModule = function(map) {
+SoundModule = function() {
 	var cameraPosition = new THREE.Vector2(0, 0, 0);
-	var timestamps=[];	
+	var timestamps=[];
 	var feature;
 
-	oscillator = new Oscillator(timestamps, map.getCoordinatesForStreet("Hermannplatz"));
+	this.oscillator = new Oscillator(timestamps);
 
 
 	this.updateSpat = function(vector3) {
-		oscillator.updateSpat(vector3);
+		this.oscillator.updateSpat(vector3);
 	}
 
 	this.play = function(){
-		oscillator.start();
+        this.oscillator.start();
 	}
 
 	this.stop = function(){
-		oscillator.stop();
+        this.oscillator.stop();
 	}
 }

@@ -1,5 +1,5 @@
 
-Oscillator = function(timestamps, coordinates) {
+Oscillator = function(timestamps) {
 
 	var flic = true;
 	var currentCamPos = new THREE.Vector3();
@@ -8,10 +8,12 @@ Oscillator = function(timestamps, coordinates) {
 	var synthBuffer;
 	var synthBuffer2;
 	var combi;
-	updateBuffer("[i%charUnitzoery!ç'tyrè'fhjofhdiohzoefhveoprhgzoiebvoùH%Odbdhgigfbnvxkvnfvpofhjrpùhcùaodhiofgth-1]");
+	//updateBuffer("[i%charUnitzoery!ç'tyrè'fhjofhdiohzoefhveoprhgzoiebvoùH%Odbdhgigfbnvxkvnfvpofhjrpùhcùaodhiofgth-1]");
 
 
-	function updateBuffer(string){
+	this.updateBuffer = function(string){
+
+        console.log("updateBuffer("+string+")");
 
 		flic = !flic;
 		var stringSeq = string;
@@ -25,7 +27,7 @@ Oscillator = function(timestamps, coordinates) {
 		for (var i = 0; i < buffer.length; i++) {
 			buffer[i] = Math.sin(charUnit[i%charUnit.length-1]/150);
 		}
-		toSynth1(buffer);	
+		toSynth1(buffer);
 	}
 
 	function toSynth1(buffer){

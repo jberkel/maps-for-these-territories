@@ -1,8 +1,9 @@
-Map = function(camera, controls) {
+Map = function(camera, controls, soundModule) {
     THREE.Scene.call( this );
 
     this.camera = camera;
     this.controls = controls;
+    this.soundModule = soundModule;
 
     this.streets = {};
 
@@ -99,11 +100,15 @@ Map = function(camera, controls) {
 
         var ul = document.createElement("ul");
         ul.className = 'propertyList';
+        var string = '';
         for (var key in properties) {
             var li = document.createElement("li");
             li.innerText = key + ": " + properties[key].join(', ');
+            string += li.innerText;
             ul.appendChild(li);
         }
+
+        soundModule.oscillator.updateBuffer(string);
         document.body.appendChild(ul);
     }
 

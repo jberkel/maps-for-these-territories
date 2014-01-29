@@ -132,6 +132,8 @@ Map = function(camera, controls, soundModule) {
             return;
         }
 
+        vertice.sub(new THREE.Vector3(0.1,0.1,0));
+
         var from = {
             x: this.camera.position.x,
             y: this.camera.position.y,

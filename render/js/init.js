@@ -77,7 +77,7 @@ function init() {
 
     animate();
 
-    renderChanges(map, changes);
+//    renderChanges(map, changes);
 
     document.body.appendChild(renderer.domElement);
     document.addEventListener('mousedown', onDocumentMouseDown, false);
@@ -90,11 +90,16 @@ function init() {
 
         if (randomStreet) {
             console.log("zooming to "+randomStreet);
-            map.zoomTo(randomStreet, function() { zoomToRandomStreet(list); });
+            map.zoomTo(randomStreet, function() {
+
+                setTimeout(function() {
+                    zoomToRandomStreet(list);
+                }, Math.random() * 3000);
+            });
         } else {
             console.log("not found");
         }
     }
 
-    zoomToRandomStreet(Object.keys(changes));
+    zoomToRandomStreet(Object.keys(streets));
 }

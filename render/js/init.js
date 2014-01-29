@@ -22,15 +22,20 @@ function init() {
         }
     }
 
+    var stats = new Stats();
+    stats.domElement.id = "stats";
+    document.body.appendChild(stats.domElement);
+
     soundModule = new SoundModule(map);
 
     function animate() {
         requestAnimationFrame(animate);
         TWEEN.update();
 //        controls.update();
+
         render();
-        //console.log(camera.position);
         soundModule.updateSpat(camera.position)
+        stats.update();
     }
 
     function render() {

@@ -14,7 +14,6 @@ Oscillator = function(timestamps, coordinates) {
 
 	this.updateSpat = function(vector3){
 		distance = coordinates.distanceTo(vector3);
-		console.log(distance);
 	}
 
 

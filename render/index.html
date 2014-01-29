@@ -1,11 +1,13 @@
 <html>
   <head>
     <title>afterglow</title>
-    <style>canvas { width: 100%; height: 100% }</style>
+     <link rel="stylesheet" type="text/css" href="css/style.css">
+
   </head>
   <body>
       <script src="js/vendor/tween.js"></script>
       <script src="js/vendor/three.js"></script>
+      <script src="js/vendor/stats.min.js"></script>
       <script src="js/vendor/OrbitControls.js"></script>
       <script src="js/vendor/FlyControls.js"></script>
       <script src="js/vendor/timbre.js"></script>
@@ -26,8 +28,9 @@
       <input type="button" value="Stop" onclick="soundModule.stop();">
 
       <script src="js/init.js"></script>
-
-
       <script>init();</script>
+
+
+      <div id="current">Test</div>
   </body>
 </html>

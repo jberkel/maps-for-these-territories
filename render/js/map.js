@@ -15,6 +15,15 @@ Map = function(camera, controls) {
         this.streets[name] = lines;
     };
 
+
+    this.getColorFromStreet = function(name) {
+        var lines = this.streets[name];
+        if (lines) {
+            return lines[0].material.color;
+        }
+        return undefined;
+    };
+
     this.setColorForStreet = function(name, color) {
         var objs = this.streets[name];
         if (!objs) return;
@@ -33,14 +42,23 @@ Map = function(camera, controls) {
             var vertice   = firstLine.geometry.vertices[0];
             if (vertice) {
                 console.log(vertice);
-                return vertice;            
+                return vertice;
             }
-        } 
+        }
         console.log("Don't now street "+name);
         return new THREE.Vector3();
     };
 
+    this.setHeading = function(title) {
+        var current = document.getElementById("current");
+        if (current) {
+            current.innerText = title;
+        }
+    };
+
     this.zoomTo = function(name, completed) {
+        this.setHeading(name);
+
         var vertice = this.getCoordinatesForStreet(name);
 
         var from = {
@@ -66,13 +84,20 @@ Map = function(camera, controls) {
 
         var position = this.camera.position;
 
+        var oldColor = this.getColorFromStreet(name);
+
+        var scope = this;
         tween.onUpdate(function() {
+            scope.setColorForStreet(name, new THREE.Color(0x00ff00));
+
             position.x = from.x;
             position.y = from.y;
             position.z = from.z;
         });
 
         tween.onComplete(function() {
+            scope.setColorForStreet(name, oldColor);
+
             console.log("completed");
 
             if (completed) {

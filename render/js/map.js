@@ -103,12 +103,10 @@ Map = function(camera, controls, soundModule) {
         var string = '';
         for (var key in properties) {
             var li = document.createElement("li");
-            li.innerText = key + ": " + properties[key].join(', ');
+            li.innerHTML = key + ": " + properties[key].join(', ');
             ul.appendChild(li);
-
-        //    string += li.innerText;
+            string += li.innerText;
         }
-
 
         var name = properties['name'];
 
@@ -159,7 +157,6 @@ Map = function(camera, controls, soundModule) {
 
         var oldColor = this.getColorFromStreet(name);
         var properties = this.getProperties(name);
-
 
 
         this.showProperties(properties);

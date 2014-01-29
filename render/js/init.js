@@ -103,5 +103,5 @@ function init() {
     }
 
     zoomToRandomStreet(Object.keys(streets));
-//    soundModule.play();
+    soundModule.play();
 }

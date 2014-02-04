@@ -41,11 +41,29 @@ Oscillator = function(timestamps) {
 		var add = T("*", synthBuffer, synthBuffer2, sin).set({mul:1});
 
         if (!this.lpf) {
-            this.lpf = T("lowpass", {cutoff:1200, res:5}, add).set({mul:0.7});
+            this.lpf = T("lowpass", {cutoff:390, res:5}, add).set({mul:0.7});
             this.lpf.play();
         } else {
-            this.lpf.removeAll();
+            var current = this.lpf.nodes[0];
+
             this.lpf.append(add);
+
+            var foo = this.lpf;
+            var from = {x: 0.7};
+
+            var tween = new TWEEN.Tween(from).to({x: 0}, 1000);
+
+            tween.onUpdate(function() {
+                console.log("setting "+from.x+" on "+current);
+                current.set({mul:from.x})
+
+            });
+            tween.onComplete(function() {
+                foo.remove(current);
+            });
+            tween.start();
+
+
         }
 
 		//var rev = T("reverb", {room:0.3, damp:0.2, mix:0.9}, add).set({mul:0.6});

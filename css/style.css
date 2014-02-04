@@ -41,3 +41,17 @@ ul.propertyList {
 }
 
 
+
+
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+#main-window[inFullscreen=true] {
+    padding-top: 0px !important;
+}
+
+#navigator-toolbox[inFullscreen=true]:not(:hover) #PersonalToolbar,
+#navigator-toolbox[inFullscreen=true]:not(:hover) #GBL-Toolbar,
+#navigator-toolbox[inFullscreen=true]:not(:hover) #web-developer-toolbar,
+#navigator-toolbox[inFullscreen=true]:not(:hover) .web-developer-toolbar {
+    visibility: collapse;
+}
